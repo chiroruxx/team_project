@@ -3,23 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>chiro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-<dl>
-    <dt>氏名</dt>
-    <dd>chiro(GitHub上で氏名は公開したくないので伏せます)</dd>
-
-    <dt>年齢</dt>
-    <dd>33歳</dd>
-
-    <dt>コース</dt>
-    <dd>情報アーキテクチャコース</dd>
-
-    <dt>仕事</dt>
-    <dd>Webエンジニア・・・だけど、今は突発タスクやったりコーチングやったり壁打ちの壁になったりするのがメイン</dd>
-
-    <dt>開発環境</dt>
-    <dd>git, GitHub, PHP, Vue.js などなど</dd>
-</dl>
+<body class="bg-sky-100">
+<div class="container mx-auto">
+    <h1 class="text-4xl mt-12 mb-20">Chiro の自己紹介ページ</h1>
+    <div class="flex flex-wrap gap-20 mb-40">
+        <div class="flex-none w-60 h-60 bg-amber-100 border-solid border-2 rounded-lg border-amber-600 text-center p-4">
+            <div class="flex flex-col justify-between h-32">
+                <h2 class="w-100 text-3xl font-bold mb-4">氏名</h2>
+                <p class="flex-1 grow text-center">chiro(GitHub上で氏名は公開したくないので伏せます)</p>
+            </div>
+        </div>
+        <div class="flex-none w-60 h-60 bg-amber-100 border-solid border-2 rounded-lg border-amber-600 text-center p-4">
+            <div class="flex flex-col justify-between h-32">
+                <h2 class="w-100 text-3xl font-bold mb-4">年齢</h2>
+                <p class="flex-1 grow text-center">33歳</p>
+            </div>
+        </div>
+        <div class="flex-none w-60 h-60 bg-amber-100 border-solid border-2 rounded-lg border-amber-600 text-center p-4">
+            <div class="flex flex-col justify-between h-32">
+                <h2 class="w-100 text-3xl font-bold mb-4">コース</h2>
+                <p class="flex-1 grow text-center">情報アーキテクチャコース</p>
+            </div>
+        </div>
+        <div class="flex-none w-60 h-60 bg-amber-100 border-solid border-2 rounded-lg border-amber-600 text-center p-4">
+            <div class="flex flex-col justify-between h-32">
+                <h2 class="w-100 text-3xl font-bold mb-4">仕事</h2>
+                <p class="flex-1 grow text-center">Webエンジニア・・・だけど、今は突発タスクやったりコーチングやったり壁打ちの壁になったりするのがメイン</p>
+            </div>
+        </div>
+        <div class="flex-none w-60 h-60 bg-amber-100 border-solid border-2 rounded-lg border-amber-600 text-center p-4">
+            <div class="flex flex-col justify-between h-32">
+                <h2 class="w-100 text-3xl font-bold mb-4">開発環境</h2>
+                <p class="flex-1 grow text-center">git, GitHub, PHP, Vue.js などなど</p>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
