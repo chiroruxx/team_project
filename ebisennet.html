@@ -3,13 +3,14 @@
 <head>
   <title>AIIT コラボレイティブ開発特論</title>
   <meta charset="UTF-8">
+  <script src="https://unpkg.com/three@0.131.3/build/three.min.js"></script>
 </head>
 <body>
   <h1>GitHubを使ったチーム開発演習</h1>
   <p>プルリクしてみよう</p>
   <h2>自己紹介</h2>
-  <p>氏名：海老塚　正仙（えびづか　まさのり）</p>
-  <p>年齢：２７歳</p>
+  <p>氏名：海老塚（えびづか）</p>
+  <p>年齢：２０代後半</p>
   <p>研究科：情報アーキテクチャコース長期履修（２年目）</p>
   <p>仕事：コールセンター系のシステム開発やチャットボット開発や要件定義、PoCなど等</p>
   <p>開発環境: Git/GitLab, Node.js, PHP, Python, DB2, PostgreSQL etc</p>
@@ -17,5 +18,59 @@
   <h3>好き食べ物</h3>
   <p>ズワイガニ</p>
   <p>ステーキくにのワイルドハンバーグ</p>
+  <canvas id="myCanvas"></canvas>
 </body>
 </html>
+<script>
+
+window.addEventListener("DOMContentLoaded", init);
+
+function init() {
+  const width = 960;
+  const height = 540;
+
+  // レンダラー作成
+  const renderer = new THREE.WebGLRenderer({
+    canvas: document.querySelector("#myCanvas")
+  });
+  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.setSize(width, height);
+  // シーン作成
+  const scene = new THREE.Scene();
+  // カメラ作成
+  const camera = new THREE.PerspectiveCamera(
+    45,
+    width / height,
+    1,
+    10000
+  );
+  camera.position.set(0, 0, +1000);
+  // マテリアル作成
+  const geometry = new THREE.BoxGeometry(500, 500, 500);
+  const material = new THREE.MeshStandardMaterial({
+    color: 0xffffff
+  });
+  const box = new THREE.Mesh(geometry, material);
+  scene.add(box);
+  // 平行光源
+  const light = new THREE.DirectionalLight(0xffffff);
+  light.intensity = 2; 
+  light.position.set(1, 1, 1);
+  // シーン追加
+  scene.add(light);
+  // 初回実行
+  tick();
+
+  function tick() {
+    requestAnimationFrame(tick);
+
+    // 箱を回転させる
+    box.rotation.x += 0.020;
+    box.rotation.y += 0.01;
+
+    // レンダリング
+    renderer.render(scene, camera);
+  }
+}
+
+</script>
